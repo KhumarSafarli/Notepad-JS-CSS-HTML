@@ -27,6 +27,42 @@ body {
   height: 100vh;
   background-color: #193055;
 
+  .side-bar {
+    position: fixed;
+    .side-bar-content {
+      padding-top: 30px;
+      padding-left: 20px;
+      width: 300px;
+      height: 100vh;
+      display: none;
+      background-color: #93aad1;
+      box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px,
+        rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+      p {
+      @include sidebar-text;
+      transition: 0.1s;
+      }
+      p:hover{
+        transform: scale(1.1);
+        cursor: pointer;
+        box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 15px -3px, rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;
+      }
+    }
+
+    img {
+      cursor: pointer;
+      width: 30px;
+      margin-left: 30px;
+      transform: translateY(30px);
+      transition: 0.1s;
+    }
+    img:hover {
+      box-shadow: rgba(255, 255, 255, 0.1) 0px 1px 1px 0px inset,
+        rgba(50, 50, 93, 0.25) 0px 50px 100px -20px,
+        rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
+    }
+  }
+
   header {
     @include center-all-items;
     padding-top: 30px;
@@ -129,7 +165,7 @@ body {
     .cards {
       flex-wrap: wrap;
       display: flex;
-      margin-left: 150px;
+      margin: auto;
       gap: 30px;
       justify-content: center;
       .card {
@@ -187,18 +223,18 @@ body {
         transform: scale(1.1);
       }
     }
-    .footer-label{
-        @include center-all-items;
-        flex-direction: column;
-       padding: 30px;
-        h6{
-            font-size: 30px;
-            font-weight: 400;
-        }
-        p{
-            font-size: 26px;
-            font-weight: 700;
-        }
+    .footer-label {
+      @include center-all-items;
+      flex-direction: column;
+      padding: 30px;
+      h6 {
+        font-size: 30px;
+        font-weight: 400;
+      }
+      p {
+        font-size: 26px;
+        font-weight: 700;
+      }
     }
   }
 }
