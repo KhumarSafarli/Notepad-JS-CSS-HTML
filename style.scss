@@ -24,7 +24,7 @@ html {
   color: white;
 }
 body {
-    height: 100vh;
+  height: 100vh;
   background-color: #193055;
 
   header {
@@ -168,25 +168,37 @@ body {
       }
     }
   }
-  footer{
+  footer {
     margin-top: 30px;
-    height: 150px;
-    background-color: #1A4B73;
+    height: 250px;
+    background-color: #1a4b73;
     box-shadow: rgba(100, 100, 111, 0.2) 20px 7px 29px 0px;
-  .social-medias{
-    @include center-all-items;
-    gap:30px;
-    padding: 20px;
-        img{
-            width: 50px;
-            cursor: pointer;
-            box-shadow: rgba(100, 100, 111, 0.2) 20px 7px 29px 0px;
-           transition: 0.2s;
+    .social-medias {
+      @include center-all-items;
+      gap: 30px;
+      padding: 20px;
+      img {
+        width: 50px;
+        cursor: pointer;
+        box-shadow: rgba(100, 100, 111, 0.2) 20px 7px 29px 0px;
+        transition: 0.2s;
+      }
+      img:hover {
+        transform: scale(1.1);
+      }
+    }
+    .footer-label{
+        @include center-all-items;
+        flex-direction: column;
+       padding: 30px;
+        h6{
+            font-size: 30px;
+            font-weight: 400;
         }
-        img:hover{
-            transform: scale(1.1);
+        p{
+            font-size: 26px;
+            font-weight: 700;
         }
-       
+    }
   }
-}
 }
