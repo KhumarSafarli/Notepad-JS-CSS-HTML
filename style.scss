@@ -105,5 +105,17 @@ body{
                 }
             }
         }
+        .search-box{
+            margin-top: 15px;
+            input{
+               @include search-bar-input;
+            }
+            img{
+                width: 28px;
+                position: absolute;
+                transform: translate(-40px,7px)
+            }
+            
+        }
     }
 }
