@@ -1,0 +1,37 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+@import "./mixins";
+@font-face {
+    font-family: "Montserrat";
+    src: url(./assets/fonts/Montserrat-Regular.ttf) format("truetype");
+    font-weight: 400;
+}
+@font-face {
+    font-family: "Montserrat";
+    src: url(./assets/fonts/Montserrat-Bold.ttf) format("truetype");
+    font-weight: 700;
+}
+@font-face {
+    font-family: "Montserrat";
+    src: url(./assets/fonts/Montserrat-Light.ttf) format("truetype");
+    font-weight: 300;
+}
+html{
+font-family: "Montserrat";
+color:white;
+}
+body{
+    background-color: #0A2145;
+
+    header{
+        @include center-all-items;
+        padding-top:30px;
+
+        h1{
+            font-weight: 400;
+        }
+    }
+}
