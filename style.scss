@@ -29,9 +29,35 @@ body{
     header{
         @include center-all-items;
         padding-top:30px;
-
+        margin-bottom: 20px;
         h1{
             font-weight: 400;
+            text-shadow: -2px 0px 9px rgba(0,0,0,0.25);
+        }
+    }
+    .input-box{
+        @include center-all-items;
+        flex-direction: column;
+
+        form{
+            display: flex;
+            flex-direction: column;
+            #noteTitle{
+                outline: none;
+                border: 2px solid #20ACB5;
+                border-radius: 5px;
+                width: 465px;
+                height: 40px;
+                padding: 10px;
+                margin-bottom: 25px;
+            }
+            #noteContent{
+                outline: none;
+                padding: 10px;
+                border-radius: 5px;
+                border: 2px solid #20ACB5;
+                height: 205px;
+            }
         }
     }
 }
