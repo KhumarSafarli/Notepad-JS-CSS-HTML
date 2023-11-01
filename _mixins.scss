@@ -1,0 +1,24 @@
+@mixin center-all-items{
+    display: flex;
+        justify-content: center;
+        align-items: center;
+}
+@mixin save-btn-style{
+    width: 78px;
+    height: 44px;
+    border-radius: 10px;
+    outline: none;
+    border:none;
+    cursor: pointer;
+    transition: 0.2s;
+    color: white;
+    background-color: #00bac7;
+}
+@mixin search-bar-input{
+    border-radius: 5px;
+    padding: 10px;
+    border: 2px solid #20ACB5;
+    width: 465px;
+    outline:none;
+    height: 37px;
+}
