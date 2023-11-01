@@ -24,13 +24,14 @@ font-family: "Montserrat";
 color:white;
 }
 body{
-    background-color: #0A2145;
+    background-color: #193055;
 
     header{
         @include center-all-items;
         padding-top:30px;
         margin-bottom: 20px;
         h1{
+            font-size:26px;
             font-weight: 400;
             text-shadow: -2px 0px 9px rgba(0,0,0,0.25);
         }
@@ -57,6 +58,51 @@ body{
                 border-radius: 5px;
                 border: 2px solid #20ACB5;
                 height: 205px;
+            }
+        }
+        .bottom-notepad{
+            margin-top: 20px;
+            display: flex;
+            width: 465px;
+            justify-content: space-between;
+            align-items: center;
+
+            #save-btn{
+                @include save-btn-style;
+            }
+            #save-btn:hover{
+                transform: scale(1.05);
+                box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+            }
+
+            .color-btns{
+                button{
+                width: 44px;
+                height: 44px;
+                border-radius: 50px;
+                border:none;
+                margin-right: 10px;
+                transition: 0.2s;
+                }
+                button:hover{
+                    transform: scale(1.1);
+                    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+                }
+                #pink{
+                    background-color: pink;
+                }
+                #purple{
+                    background-color: rgb(141, 69, 141);
+                }
+                #blue{
+                    background-color: rgb(122, 193, 255);
+                }
+                #yellow{
+                    background-color: rgb(255, 255, 93);
+                }
+                #green{
+                    background-color: rgb(81, 171, 81);
+                }
             }
         }
     }
