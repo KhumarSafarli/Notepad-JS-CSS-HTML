@@ -24,6 +24,7 @@ html {
   color: white;
 }
 body {
+    height: 100vh;
   background-color: #193055;
 
   header {
@@ -123,15 +124,14 @@ body {
     margin: auto;
     transform: translateY(10px);
     width: 900px;
-    height: 100%;
+    height: fit-content;
 
     .cards {
       flex-wrap: wrap;
       display: flex;
-      margin: auto;
+      margin-left: 150px;
       gap: 30px;
       justify-content: center;
-      align-items: center;
       .card {
         @include note-card-size;
         border: 2px dotted pink;
@@ -168,4 +168,25 @@ body {
       }
     }
   }
+  footer{
+    margin-top: 30px;
+    height: 150px;
+    background-color: #1A4B73;
+    box-shadow: rgba(100, 100, 111, 0.2) 20px 7px 29px 0px;
+  .social-medias{
+    @include center-all-items;
+    gap:30px;
+    padding: 20px;
+        img{
+            width: 50px;
+            cursor: pointer;
+            box-shadow: rgba(100, 100, 111, 0.2) 20px 7px 29px 0px;
+           transition: 0.2s;
+        }
+        img:hover{
+            transform: scale(1.1);
+        }
+       
+  }
+}
 }
