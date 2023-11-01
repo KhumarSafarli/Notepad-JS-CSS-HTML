@@ -1,121 +1,171 @@
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 @import "./mixins";
 @font-face {
-    font-family: "Montserrat";
-    src: url(./assets/fonts/Montserrat-Regular.ttf) format("truetype");
-    font-weight: 400;
+  font-family: "Montserrat";
+  src: url(./assets/fonts/Montserrat-Regular.ttf) format("truetype");
+  font-weight: 400;
 }
 @font-face {
-    font-family: "Montserrat";
-    src: url(./assets/fonts/Montserrat-Bold.ttf) format("truetype");
-    font-weight: 700;
+  font-family: "Montserrat";
+  src: url(./assets/fonts/Montserrat-Bold.ttf) format("truetype");
+  font-weight: 700;
 }
 @font-face {
-    font-family: "Montserrat";
-    src: url(./assets/fonts/Montserrat-Light.ttf) format("truetype");
-    font-weight: 300;
+  font-family: "Montserrat";
+  src: url(./assets/fonts/Montserrat-Light.ttf) format("truetype");
+  font-weight: 300;
 }
-html{
-font-family: "Montserrat";
-color:white;
+html {
+  font-family: "Montserrat";
+  color: white;
 }
-body{
-    background-color: #193055;
+body {
+  background-color: #193055;
 
-    header{
-        @include center-all-items;
-        padding-top:30px;
-        margin-bottom: 20px;
-        h1{
-            font-size:26px;
+  header {
+    @include center-all-items;
+    padding-top: 30px;
+    margin-bottom: 20px;
+    h1 {
+      font-size: 26px;
+      font-weight: 400;
+      text-shadow: -2px 0px 9px rgba(0, 0, 0, 0.25);
+    }
+  }
+  .input-box {
+    @include center-all-items;
+    flex-direction: column;
+
+    form {
+      display: flex;
+      flex-direction: column;
+      #noteTitle {
+        outline: none;
+        border: 2px solid #20acb5;
+        border-radius: 5px;
+        width: 465px;
+        height: 40px;
+        padding: 10px;
+        margin-bottom: 25px;
+      }
+      #noteContent {
+        outline: none;
+        padding: 10px;
+        border-radius: 5px;
+        border: 2px solid #20acb5;
+        height: 205px;
+      }
+    }
+    .bottom-notepad {
+      margin-top: 20px;
+      display: flex;
+      width: 465px;
+      justify-content: space-between;
+      align-items: center;
+
+      #save-btn {
+        @include save-btn-style;
+      }
+      #save-btn:hover {
+        transform: scale(1.05);
+        box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+      }
+
+      .color-btns {
+        button {
+          width: 44px;
+          height: 44px;
+          border-radius: 50px;
+          border: none;
+          margin-right: 10px;
+          transition: 0.2s;
+        }
+        button:hover {
+          transform: scale(1.1);
+          box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+        }
+        #pink {
+          background-color: pink;
+        }
+        #purple {
+          background-color: rgb(141, 69, 141);
+        }
+        #blue {
+          background-color: rgb(122, 193, 255);
+        }
+        #yellow {
+          background-color: rgb(255, 255, 93);
+        }
+        #green {
+          background-color: rgb(81, 171, 81);
+        }
+      }
+    }
+    .search-box {
+      margin-top: 15px;
+      input {
+        @include search-bar-input;
+      }
+      img {
+        width: 28px;
+        position: absolute;
+        transform: translate(-40px, 7px);
+      }
+    }
+  }
+  .cards-box {
+    display: flex;
+
+    margin: auto;
+    transform: translateY(10px);
+    width: 900px;
+    height: 100%;
+
+    .cards {
+      flex-wrap: wrap;
+      display: flex;
+      margin: auto;
+      gap: 30px;
+      justify-content: center;
+      align-items: center;
+      .card {
+        @include note-card-size;
+        border: 2px dotted pink;
+        box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+
+        .card-header {
+          @include card-header-size;
+          background-color: pink;
+          padding: 10px;
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          h5 {
+            color: rgb(45, 45, 45);
+            font-size: 15px;
+          }
+          img {
+            cursor: pointer;
+            width: 15px;
+            transition: 0.2s;
+          }
+          img:hover {
+            transform: scale(1.1);
+          }
+        }
+        .note-content {
+          padding: 10px;
+          p {
+            font-size: 14px;
             font-weight: 400;
-            text-shadow: -2px 0px 9px rgba(0,0,0,0.25);
+            letter-spacing: 2px;
+          }
         }
+      }
     }
-    .input-box{
-        @include center-all-items;
-        flex-direction: column;
-
-        form{
-            display: flex;
-            flex-direction: column;
-            #noteTitle{
-                outline: none;
-                border: 2px solid #20ACB5;
-                border-radius: 5px;
-                width: 465px;
-                height: 40px;
-                padding: 10px;
-                margin-bottom: 25px;
-            }
-            #noteContent{
-                outline: none;
-                padding: 10px;
-                border-radius: 5px;
-                border: 2px solid #20ACB5;
-                height: 205px;
-            }
-        }
-        .bottom-notepad{
-            margin-top: 20px;
-            display: flex;
-            width: 465px;
-            justify-content: space-between;
-            align-items: center;
-
-            #save-btn{
-                @include save-btn-style;
-            }
-            #save-btn:hover{
-                transform: scale(1.05);
-                box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-            }
-
-            .color-btns{
-                button{
-                width: 44px;
-                height: 44px;
-                border-radius: 50px;
-                border:none;
-                margin-right: 10px;
-                transition: 0.2s;
-                }
-                button:hover{
-                    transform: scale(1.1);
-                    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-                }
-                #pink{
-                    background-color: pink;
-                }
-                #purple{
-                    background-color: rgb(141, 69, 141);
-                }
-                #blue{
-                    background-color: rgb(122, 193, 255);
-                }
-                #yellow{
-                    background-color: rgb(255, 255, 93);
-                }
-                #green{
-                    background-color: rgb(81, 171, 81);
-                }
-            }
-        }
-        .search-box{
-            margin-top: 15px;
-            input{
-               @include search-bar-input;
-            }
-            img{
-                width: 28px;
-                position: absolute;
-                transform: translate(-40px,7px)
-            }
-            
-        }
-    }
+  }
 }
