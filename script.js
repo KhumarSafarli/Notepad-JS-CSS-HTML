@@ -16,8 +16,6 @@ function getNotesFromLocalStorage() {
     return [];
   }
 }
-
-
 noteFormElement.addEventListener("submit", (e) => {
   e.preventDefault();
   const noteTitleElement = e.target.querySelector(".noteTitle");
@@ -32,7 +30,6 @@ noteFormElement.addEventListener("submit", (e) => {
   if(!activeColorElement){
     return alert("Please choose a note color!")
   }
-
   const newNote = {
     title: noteTitleElement.value,
     description: noteDescriptionElement.value,
@@ -76,13 +73,10 @@ function createNoteElement(note) {
   });
 
   noteDeleteBtn.appendChild(deleteIcon);
-
   cardHeader.appendChild(noteTitleElement);
   cardHeader.appendChild(noteDeleteBtn);
-
   noteElement.appendChild(cardHeader);
   noteElement.appendChild(noteDescriptionElement);
-
   noteContainerElement.appendChild(noteElement);
   const notes = getNotesFromLocalStorage();
   notes.push(note);
