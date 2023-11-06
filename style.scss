@@ -25,10 +25,15 @@ html {
 }
 body {
   height: 100vh;
-  background-color: #193055;
+  background-color: #4a5e7e;
 
   .side-bar {
     position: fixed;
+    z-index: 100;
+    @include for-size(mobile){
+      display: none;
+    }
+    
     .side-bar-content {
       padding-top: 30px;
       padding-left: 20px;
@@ -38,16 +43,25 @@ body {
       background-color: #93aad1;
       box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px,
         rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+        transition: transform 0.3s ease-in-out; 
+  
       p {
-      @include sidebar-text;
-      transition: 0.1s;
+        @include sidebar-text;
+        transition: 0.1s;
       }
-      p:hover{
+      p:hover {
         transform: scale(1.1);
         cursor: pointer;
-        box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 15px -3px, rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;
+        box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 15px -3px,
+          rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;
       }
     }
+    .side-bar-content.open {
+        display: block;
+        top: -20px;
+       
+      }
+      
 
     img {
       cursor: pointer;
@@ -67,6 +81,10 @@ body {
     @include center-all-items;
     padding-top: 30px;
     margin-bottom: 20px;
+
+    @include for-size(tablet){
+      margin: auto;
+    }
     h1 {
       font-size: 26px;
       font-weight: 400;
@@ -76,11 +94,18 @@ body {
   .input-box {
     @include center-all-items;
     flex-direction: column;
+    
 
     form {
       display: flex;
       flex-direction: column;
-      #noteTitle {
+      @include for-size(mobile){
+        @include center-all-items;
+      }
+      .noteTitle {
+        @include for-size(mobile){
+          width: 350px;
+        }
         outline: none;
         border: 2px solid #20acb5;
         border-radius: 5px;
@@ -89,7 +114,10 @@ body {
         padding: 10px;
         margin-bottom: 25px;
       }
-      #noteContent {
+      .noteContent {
+        @include for-size(tablet){
+          width: 100%;
+        }
         outline: none;
         padding: 10px;
         border-radius: 5px;
@@ -103,6 +131,13 @@ body {
       width: 465px;
       justify-content: space-between;
       align-items: center;
+      @include for-size(mobile){
+       
+        display: flex;
+        gap: 20px;
+        width: 100%;
+        flex-direction: column;
+      }
 
       #save-btn {
         @include save-btn-style;
@@ -117,9 +152,15 @@ body {
           width: 44px;
           height: 44px;
           border-radius: 50px;
-          border: none;
+          border: 2px solid transparent;
           margin-right: 10px;
           transition: 0.2s;
+          cursor: pointer;
+
+          
+        }
+        .color.active{
+          border-color: white;
         }
         button:hover {
           transform: scale(1.1);
@@ -127,6 +168,7 @@ body {
         }
         #pink {
           background-color: pink;
+          
         }
         #purple {
           background-color: rgb(141, 69, 141);
@@ -144,8 +186,12 @@ body {
     }
     .search-box {
       margin-top: 15px;
+      
       input {
         @include search-bar-input;
+        @include for-size(mobile){
+          width: 300px;
+        }
       }
       img {
         width: 28px;
@@ -159,7 +205,7 @@ body {
 
     margin: auto;
     transform: translateY(10px);
-    width: 900px;
+   
     height: fit-content;
 
     .cards {
@@ -168,6 +214,36 @@ body {
       margin: auto;
       gap: 30px;
       justify-content: center;
+      .pink {
+        .card-header{
+            background-color: pink;
+        }
+      }
+
+      .purple {
+        .card-header {
+          background-color: purple;
+        }
+      }
+
+      .blue {
+        .card-header {
+          background-color: rgb(122, 193, 255);
+        }
+      }
+
+      .yellow {
+        .card-header {
+          background-color: rgb(255, 255, 93);
+        }
+      }
+
+      .green {
+        .card-header {
+          background-color: rgb(81, 171, 81);
+        }
+      }
+
       .card {
         @include note-card-size;
         border: 2px dotted pink;
@@ -183,6 +259,10 @@ body {
           h5 {
             color: rgb(45, 45, 45);
             font-size: 15px;
+          }
+          button{
+            background-color: transparent;
+            border: none;
           }
           img {
             cursor: pointer;
@@ -205,14 +285,21 @@ body {
     }
   }
   footer {
+    
     margin-top: 30px;
     height: 250px;
     background-color: #1a4b73;
     box-shadow: rgba(100, 100, 111, 0.2) 20px 7px 29px 0px;
+    @include for-size(tablet){
+      height: 100%;
+    }
     .social-medias {
       @include center-all-items;
       gap: 30px;
       padding: 20px;
+      @include for-size(mobile){
+        gap: 15px;
+      }
       img {
         width: 50px;
         cursor: pointer;
@@ -230,6 +317,9 @@ body {
       h6 {
         font-size: 30px;
         font-weight: 400;
+        @include for-size(mobile){
+          font-size: 14px;
+        }
       }
       p {
         font-size: 26px;
