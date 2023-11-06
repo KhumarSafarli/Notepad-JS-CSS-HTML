@@ -23,23 +23,24 @@
       <h1>This is your <strong>NOTEPAD</strong></h1>
     </header>
     <div class="input-box">
-        <form>
-            <input type="text" id="noteTitle" name="noteTitle" placeholder="Note Title" required>
-            <textarea id="noteContent" name="noteContent" placeholder="Write your note here ..."></textarea>
+        <form class="note-form">
+            <input type="text"  placeholder="What needs to be done?" class="noteTitle">
+            <textarea class="noteContent" name="noteContent" placeholder="Write your note here ..."></textarea>
             
-        </form>
+       
         <div class="bottom-notepad">
             <div class="color-btns">
-                <button id="pink"></button>
-                <button id="purple"></button>
-                <button id="blue"></button>
-                <button id="yellow"></button>
-                <button id="green"></button>
+                <button id="pink" type="button" class="color" style="background-color: pink"></button>
+                <button id="plum" type="button" class="color"style="background-color: rgb(141, 69, 141)" ></button>
+                <button id="lightblue" type="button" class="color" style="background-color: rgb(122, 193, 255)"></button>
+                <button id="yellow" type="button" class="color"style="background-color:rgb(255, 255, 93)"></button>
+                <button id="lightgreen" type="button" class="color"style="background-color:rgb(81, 171, 81)"></button>
             </div>
-            <input type="submit" id="save-btn" value="Save ✓ ">
+            <button id="save-btn" >Save ✓</button>
         </div>
+    </form>
         <div class="search-box">
-            <input type="text" id="searchInput" name="searchInput" placeholder="Type to search...">
+            <input type="text" id="searchInput" class="searchInput"name="searchInput" placeholder="Type to search...">
             <img src="./assets/icons/searchicon.png"/>
         </div>
     </div>
@@ -48,7 +49,7 @@
             <div class="card">
                 <div class="card-header">
                     <h5>Add a title to your note</h5>
-                    <img src="./assets/icons/delete.png"/>
+                   <button><img src="./assets/icons/delete.png"/></button> 
 
                 </div>
                 <div class="note-content">
